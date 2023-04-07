@@ -9,4 +9,6 @@ def author(request):
     return HttpResponse("Hello Author 👨‍🎤")
 
 def greet(request, name):
-    return HttpResponse(f"Hello, {name}!!!")
+    return render(request, "hello/greet.html", {
+        "name": name.capitalize()
+    })
